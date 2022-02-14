@@ -18,12 +18,17 @@ function loadEnvironment(testing) {
   if (PROD === "true" || testing === 2) {
     options = {
       dialect: "postgres",
+      native: true, 
+      ssl: true,
       define: {
         timestamps: true,
         underscored: true,
       },
       dialectOptions: {
-        ssl: true,
+        ssl: {
+          require: true, // This will help you. But you will see nwe error
+          rejectUnauthorized: false // This line will fix new error
+        }
       },
       logging: false,
     };
