@@ -18,7 +18,7 @@ function loadEnvironment(testing) {
   if (PROD === "true" || testing === 2 || PRODUCTION === "true") {
     options = {
       dialect: "postgres",
-      "ssl": true,
+      ssl: true,
       define: {
         timestamps: true,
         underscored: true,
