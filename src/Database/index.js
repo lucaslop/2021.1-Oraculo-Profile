@@ -4,7 +4,7 @@ const { Department } = require("../Model/Department");
 const { Level } = require("../Model/Level");
 require("dotenv").config();
 
-const { PROD, DATABASE_URL } = process.env;
+const { PROD, DATABASE_URL,PRODUCTION } = process.env;
 
 function loadEnvironment(testing) {
   let options;
@@ -15,7 +15,7 @@ function loadEnvironment(testing) {
   }
 
   // Checks if we are being deployed at production/homol environment
-  if (PROD === "true" || testing === 2) {
+  if (PROD === "true" || testing === 2 || PRODUCTION === "true") {
     options = {
       dialect: "postgres",
       "ssl": true,
