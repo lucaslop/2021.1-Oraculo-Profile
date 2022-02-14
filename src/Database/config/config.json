@@ -2,7 +2,6 @@
   "development": {
     "use_env_variable": "DATABASE_URL",
     "dialect": "postgres",
-    "ssl": true,
     "define": {
       "timestamps": true,
       "underscored": true
@@ -13,7 +12,7 @@
         "rejectUnauthorized": false
       }
     },
-    "logging": false
+    "logging": true
   },
   "test": {
     "use_env_variable": "DATABASE_URL"
@@ -21,7 +20,6 @@
   "production": {
     "use_env_variable": "DATABASE_URL",
     "dialect": "postgres",
-    "ssl": true,
     "define": {
       "timestamps": true,
       "underscored": true
