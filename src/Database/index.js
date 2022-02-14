@@ -34,9 +34,16 @@ function loadEnvironment(testing) {
   } else {
     options = {
       dialect: "postgres",
+      ssl: true,
       define: {
         timestamps: true,
         underscored: true,
+      },
+      dialectOptions: {
+        ssl: {
+          require: true,
+          rejectUnauthorized: false,
+        },
       },
       logging: false,
     };
