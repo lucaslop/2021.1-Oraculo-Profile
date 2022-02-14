@@ -9,10 +9,6 @@ env.config();
 
 const { PORT, APP_PORT, CORS } = process.env;
 
-const corsOptions = {
-  origin: (CORS === "") ? "http://localhost:3000" : `${CORS}`,
-};
-
 const app = express();
 app.disable("x-powered-by");
 
@@ -21,13 +17,8 @@ app.use(express.json());
 app.use(morgan("short"));
 app.use(routes);
 
-if (PORT === undefined) {
-  app.listen(APP_PORT);
-  console.log(`HTTP server started on port ${APP_PORT}`);
-} else {
-  app.listen(PORT);
-  console.log(`HTTP server started on port ${PORT}`);
-}
+
+app.listen(process.env.PORT || '3333');
 
 initializeDatabase();
 
