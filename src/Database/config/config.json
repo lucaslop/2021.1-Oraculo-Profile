@@ -14,8 +14,7 @@
   "production": {
     "use_env_variable": "DATABASE_URL",
     "dialect": "postgres",
-    "native": true,
-    "ssl":true,
+    "ssl": true,
     "define": {
       "timestamps": true,
       "underscored": true
