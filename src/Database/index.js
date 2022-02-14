@@ -23,10 +23,7 @@ function loadEnvironment(testing) {
         underscored: true,
       },
       dialectOptions: {
-        ssl: {
-          require: true,
-          rejectUnauthorized: false,
-        },
+        ssl: true,
       },
       logging: false,
     };
